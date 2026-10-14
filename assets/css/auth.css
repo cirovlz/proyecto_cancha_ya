@@ -1,0 +1,67 @@
+.auth-layout {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* Panel de marca: media cancha dibujada con líneas */
+.auth-marca {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 50% 50%, transparent 0 118px, var(--linea-cancha) 118px 120px, transparent 120px),
+        linear-gradient(90deg, transparent calc(50% - 1px), var(--linea-cancha) calc(50% - 1px) calc(50% + 1px), transparent calc(50% + 1px)),
+        var(--fondo);
+}
+.auth-marca .logo {
+    position: absolute;
+    top: 2rem;
+    left: 3rem;
+    font-family: var(--fuente-titulo);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--lima);
+    text-decoration: none;
+}
+.auth-marca h1 { font-size: clamp(2.5rem, 5vw, 4rem); max-width: 12ch; }
+.auth-marca p { color: var(--texto-suave); max-width: 38ch; font-size: 1.1rem; }
+
+.auth-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+    background: #0e2a1e;
+}
+.auth-panel .tarjeta { width: 100%; max-width: 440px; }
+.auth-panel h2 { font-size: 2rem; }
+
+.fila { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+
+.con-boton { position: relative; }
+.con-boton input { padding-right: 5rem; }
+.ver-clave {
+    position: absolute;
+    right: 0.4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: 0;
+    color: var(--lima);
+    font: inherit;
+    cursor: pointer;
+    padding: 0.3rem 0.5rem;
+}
+
+.pie-form { margin: 1rem 0 0; text-align: center; color: var(--texto-suave); }
+
+@media (max-width: 800px) {
+    .auth-layout { grid-template-columns: 1fr; }
+    .auth-marca { padding: 5rem 1.5rem 2rem; min-height: 0; }
+    .auth-marca .logo { left: 1.5rem; top: 1.25rem; }
+    .fila { grid-template-columns: 1fr; gap: 0; }
+}
