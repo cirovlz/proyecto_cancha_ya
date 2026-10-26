@@ -1,0 +1,25 @@
+[26-Oct-2026 18:15:22 America/Argentina/Buenos_Aires] PHP Warning:  require_once(C:\Users\cirov\OneDrive\trabajo practico de programacion\OneDrive\Desktop\xamp\htdocs\canchaya\public/../includes/admin.php): Failed to open stream: No such file or directory in C:\Users\cirov\OneDrive\trabajo practico de programacion\OneDrive\Desktop\xamp\htdocs\canchaya\public\panel.php on line 11
+[26-Oct-2026 18:15:22 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\Users\cirov\OneDrive\trabajo practico de programacion\OneDrive\Desktop\xamp\htdocs\canchaya\public/../includes/admin.php' (include_path='C:\Users\cirov\OneDrive\trabajo practico de programacion\OneDrive\Desktop\xamp\php\PEAR') in C:\Users\cirov\OneDrive\trabajo practico de programacion\OneDrive\Desktop\xamp\htdocs\canchaya\public\panel.php:11
+Stack trace:
+#0 {main}
+  thrown in C:\Users\cirov\OneDrive\trabajo practico de programacion\OneDrive\Desktop\xamp\htdocs\canchaya\public\panel.php on line 11
+[26-Oct-2026 18:15:57 America/Argentina/Buenos_Aires] PHP Warning:  require_once(C:\Users\cirov\OneDrive\trabajo practico de programacion\OneDrive\Desktop\xamp\htdocs\canchaya\public/../includes/admin.php): Failed to open stream: No such file or directory in C:\Users\cirov\OneDrive\trabajo practico de programacion\OneDrive\Desktop\xamp\htdocs\canchaya\public\panel.php on line 11
+[26-Oct-2026 18:15:57 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\Users\cirov\OneDrive\trabajo practico de programacion\OneDrive\Desktop\xamp\htdocs\canchaya\public/../includes/admin.php' (include_path='C:\Users\cirov\OneDrive\trabajo practico de programacion\OneDrive\Desktop\xamp\php\PEAR') in C:\Users\cirov\OneDrive\trabajo practico de programacion\OneDrive\Desktop\xamp\htdocs\canchaya\public\panel.php:11
+Stack trace:
+#0 {main}
+  thrown in C:\Users\cirov\OneDrive\trabajo practico de programacion\OneDrive\Desktop\xamp\htdocs\canchaya\public\panel.php on line 11
+[26-Oct-2026 18:16:15 America/Argentina/Buenos_Aires] PHP Warning:  require_once(C:\Users\cirov\OneDrive\trabajo practico de programacion\OneDrive\Desktop\xamp\htdocs\canchaya\public/../includes/admin.php): Failed to open stream: No such file or directory in C:\Users\cirov\OneDrive\trabajo practico de programacion\OneDrive\Desktop\xamp\htdocs\canchaya\public\panel.php on line 11
+[26-Oct-2026 18:16:15 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\Users\cirov\OneDrive\trabajo practico de programacion\OneDrive\Desktop\xamp\htdocs\canchaya\public/../includes/admin.php' (include_path='C:\Users\cirov\OneDrive\trabajo practico de programacion\OneDrive\Desktop\xamp\php\PEAR') in C:\Users\cirov\OneDrive\trabajo practico de programacion\OneDrive\Desktop\xamp\htdocs\canchaya\public\panel.php:11
+Stack trace:
+#0 {main}
+  thrown in C:\Users\cirov\OneDrive\trabajo practico de programacion\OneDrive\Desktop\xamp\htdocs\canchaya\public\panel.php on line 11
+[26-Oct-2026 18:16:17 America/Argentina/Buenos_Aires] PHP Warning:  require_once(C:\Users\cirov\OneDrive\trabajo practico de programacion\OneDrive\Desktop\xamp\htdocs\canchaya\public/../includes/admin.php): Failed to open stream: No such file or directory in C:\Users\cirov\OneDrive\trabajo practico de programacion\OneDrive\Desktop\xamp\htdocs\canchaya\public\panel.php on line 11
+[26-Oct-2026 18:16:17 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\Users\cirov\OneDrive\trabajo practico de programacion\OneDrive\Desktop\xamp\htdocs\canchaya\public/../includes/admin.php' (include_path='C:\Users\cirov\OneDrive\trabajo practico de programacion\OneDrive\Desktop\xamp\php\PEAR') in C:\Users\cirov\OneDrive\trabajo practico de programacion\OneDrive\Desktop\xamp\htdocs\canchaya\public\panel.php:11
+Stack trace:
+#0 {main}
+  thrown in C:\Users\cirov\OneDrive\trabajo practico de programacion\OneDrive\Desktop\xamp\htdocs\canchaya\public\panel.php on line 11
+[26-Oct-2026 18:19:38 America/Argentina/Buenos_Aires] PHP Warning:  require_once(C:\Users\cirov\OneDrive\trabajo practico de programacion\OneDrive\Desktop\xamp\htdocs\canchaya\public/../includes/admin.php): Failed to open stream: No such file or directory in C:\Users\cirov\OneDrive\trabajo practico de programacion\OneDrive\Desktop\xamp\htdocs\canchaya\public\panel.php on line 11
+[26-Oct-2026 18:19:38 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\Users\cirov\OneDrive\trabajo practico de programacion\OneDrive\Desktop\xamp\htdocs\canchaya\public/../includes/admin.php' (include_path='C:\Users\cirov\OneDrive\trabajo practico de programacion\OneDrive\Desktop\xamp\php\PEAR') in C:\Users\cirov\OneDrive\trabajo practico de programacion\OneDrive\Desktop\xamp\htdocs\canchaya\public\panel.php:11
+Stack trace:
+#0 {main}
+  thrown in C:\Users\cirov\OneDrive\trabajo practico de programacion\OneDrive\Desktop\xamp\htdocs\canchaya\public\panel.php on line 11

@@ -1,22 +1,16 @@
 <?php
 require_once __DIR__ . '/../../includes/csrf.php';
-$esAdmin = $usuario['cargo'] === CARGO_ADMIN;
+require_once __DIR__ . '/../../includes/admin.php';
 $cls = function (string $clave) use ($activo): string { return $activo === $clave ? ' class="activo"' : ''; };
 ?>
 <aside class="lateral">
-    <a class="marca" href="<?= ADMIN_URL ?>/<?= $esAdmin ? 'dashboard' : 'turnos' ?>.php"><img class="logo-img" src="<?= ASSETS_URL ?>/img/logo.png" alt="CanchaYa"></a>
+    <a class="marca" href="<?= ADMIN_URL ?>/<?= e(primera_ruta($usuario['cargo'])) ?>"><img class="logo-img" src="<?= ASSETS_URL ?>/img/logo.png" alt="CanchaYa"></a>
     <nav>
-        <?php if ($esAdmin): ?><a href="<?= ADMIN_URL ?>/dashboard.php"<?= $cls('dashboard') ?>>Dashboard</a><?php endif; ?>
-        <a href="<?= ADMIN_URL ?>/turnos.php"<?= $cls('turnos') ?>>Turnos</a>
-        <?php if ($esAdmin): ?>
-            <span class="prox">Usuarios</span>
-            <span class="prox">Canchas</span>
-            <span class="prox">Productos</span>
-            <span class="prox">Categorías</span>
-            <span class="prox">Compras</span>
-            <span class="prox">Mantenimiento</span>
-        <?php endif; ?>
+        <?php foreach (menu_admin() as [$clave, $texto, $ruta, $roles]):
+            if (!in_array($usuario['cargo'], $roles, true)) { continue; } ?>
+            <a href="<?= ADMIN_URL ?>/<?= e($ruta) ?>"<?= $cls($clave) ?>><?= e($texto) ?></a>
+        <?php endforeach; ?>
     </nav>
-    <p class="nota-lateral">Los módulos en gris llegan en la fase 3.</p>
+    <p class="nota-lateral">Sesión de <?= e($usuario['nombre']) ?></p>
     <form method="POST" action="<?= BASE_URL ?>/logout.php"><?= csrf_campo() ?><button class="btn btn-secundario" type="submit">Cerrar sesión</button></form>
 </aside>

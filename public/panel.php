@@ -8,11 +8,9 @@ require_once __DIR__ . '/../includes/turnos.php';
 $usuario = requerir_login();
 
 // Cada cargo entra a su vista
-if ($usuario['cargo'] === CARGO_ADMIN) {
-    redirigir_url(ADMIN_URL . '/dashboard.php');
-}
-if (in_array($usuario['cargo'], [CARGO_CANCHERO, CARGO_ATENCION], true)) {
-    redirigir_url(ADMIN_URL . '/turnos.php');
+require_once __DIR__ . '/../includes/admin.php';
+if ($usuario['cargo'] !== CARGO_CLIENTE) {
+    redirigir_url(ADMIN_URL . '/' . primera_ruta($usuario['cargo']));
 }
 
 $pdo = (new Conexion())->getConexion();

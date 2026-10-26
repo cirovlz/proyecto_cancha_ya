@@ -1,10 +1,14 @@
 <?php
 declare(strict_types=1);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 require_once __DIR__ . '/../config/config.php';
-
 function ahora(): string { return date('Y-m-d H:i:s'); }
 
-function horas_disponibles(): array { return range(HORA_INICIO, HORA_FIN - 1); }
+function horas_disponibles(): array { 
+    return range(HORA_INICIO, HORA_FIN - 1); 
+}
 
 function hora_valida(int $h): bool { return $h >= HORA_INICIO && $h < HORA_FIN; }
 
@@ -74,7 +78,7 @@ function puede_cambiar(array $t): bool
     if ($t['estado'] === 'cancelado' || turno_vencido($t)) {
         return false;
     }
-    return strtotime($t['fecha']) - time() >= HORAS_MIN_CAMBIO * 3600;
+    return strtotime($t['fecha']) - time() >= (HORAS_MIN_CAMBIO * 3600);
 }
 
 /** [texto, clase css] */
