@@ -79,13 +79,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Crear cuenta | CanchaYa</title>
+    <link rel="icon" type="image/png" href="<?= ASSETS_URL ?>/img/favicon.png">
     <link rel="stylesheet" href="<?= ASSETS_URL ?>/css/base.css">
     <link rel="stylesheet" href="<?= ASSETS_URL ?>/css/auth.css">
 </head>
 <body class="auth">
 <main class="auth-layout">
     <section class="auth-marca">
-        <a class="logo" href="<?= BASE_URL ?>/login.php">CanchaYa</a>
+        <a class="logo" href="<?= BASE_URL ?>/login.php"><img class="logo-img" src="<?= ASSETS_URL ?>/img/logo.png" alt="CanchaYa"></a>
         <h1>Armá tu cuenta y reservá tu turno</h1>
         <p>Elegí cancha, horario y césped. Pagás la seña y el resto se arregla en la cancha.</p>
     </section>

@@ -1,0 +1,66 @@
+/* Estructura común: cabecera, secciones, pie, tablas y estados */
+.barra { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.8rem 1.5rem; background: var(--fondo); border-bottom: 1px solid var(--borde); position: sticky; top: 0; z-index: 10; }
+.marca { font-family: var(--fuente-titulo); font-size: 1.7rem; font-weight: 700; color: var(--lima); text-decoration: none; }
+.menu { display: flex; align-items: center; gap: 1.25rem; }
+.menu a:not(.btn) { color: var(--texto); text-decoration: none; padding: 0.2rem 0; border-bottom: 2px solid transparent; }
+.menu a:not(.btn):hover, .menu a.activo { border-bottom-color: var(--lima); }
+.menu form { margin: 0; }
+.menu-btn { display: none; background: transparent; color: var(--texto); border: 1px solid var(--borde); border-radius: 6px; padding: 0.4rem 0.8rem; font: inherit; cursor: pointer; }
+
+.btn-auto { width: auto; }
+.btn-chico { padding: 0.4rem 0.75rem; font-size: 0.9rem; text-decoration: none; }
+a.btn { text-decoration: none; text-align: center; }
+
+.hero { position: relative; padding: 5rem 1.5rem; overflow: hidden;
+    background:
+        radial-gradient(circle at 78% 50%, transparent 0 118px, var(--linea-cancha) 118px 120px, transparent 120px),
+        linear-gradient(90deg, transparent calc(78% - 1px), var(--linea-cancha) calc(78% - 1px) calc(78% + 1px), transparent calc(78% + 1px)),
+        var(--fondo); }
+.hero-texto { max-width: 1000px; margin: 0 auto; }
+.hero h1 { font-size: clamp(2.6rem, 7vw, 4.8rem); max-width: 13ch; }
+.hero p { color: var(--texto-suave); font-size: 1.15rem; max-width: 46ch; margin: 0 0 1.5rem; }
+
+.seccion { max-width: 1000px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+.seccion-angosta { max-width: 640px; }
+.seccion h1 { font-size: 2.4rem; }
+.seccion h2 { font-size: 1.6rem; margin-top: 1.75rem; }
+.suave { color: var(--texto-suave); }
+.precio { color: var(--amarillo); font-weight: 600; margin: 0; }
+.grande { font-family: var(--fuente-titulo); font-size: 2rem; margin: 0 0 0.25rem; }
+
+.grid-canchas, .grid-panel { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+.grid-canchas h3 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+.pasos { padding-left: 1.25rem; max-width: 60ch; }
+.pasos li { margin-bottom: 0.5rem; }
+
+.pie { display: flex; flex-wrap: wrap; gap: 2rem 4rem; padding: 2rem 1.5rem; margin-top: 2rem; border-top: 1px solid var(--borde); color: var(--texto-suave); }
+.pie p { margin: 0.4rem 0 0; }
+
+input[type="date"], input[type="number"] { width: 100%; padding: 0.7rem 0.8rem; background: var(--fondo); color: var(--texto); border: 1px solid var(--borde); border-radius: 6px; font: inherit; color-scheme: dark; }
+.fila-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.botones { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+
+.tabla-scroll { overflow-x: auto; }
+.tabla { width: 100%; border-collapse: collapse; }
+.tabla th, .tabla td { text-align: left; padding: 0.65rem 0.75rem; border-bottom: 1px solid var(--borde); vertical-align: top; }
+.tabla th { color: var(--texto-suave); font-weight: 500; white-space: nowrap; }
+.acciones { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.acciones form { margin: 0; }
+
+.estado { display: inline-block; padding: 0.15rem 0.6rem; border-radius: 999px; font-size: 0.85rem; border: 1px solid var(--borde); white-space: nowrap; }
+.estado.pendiente { color: var(--amarillo); border-color: var(--amarillo); }
+.estado.senado { color: #8fd3ff; border-color: #8fd3ff; }
+.estado.confirmado { color: var(--lima); border-color: var(--lima); }
+.estado.cancelado, .estado.vencido { color: var(--texto-suave); }
+
+@media (max-width: 760px) {
+    .menu-btn { display: inline-block; }
+    .menu { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: flex-start; gap: 0.9rem; padding: 1rem 1.5rem; background: var(--fondo); border-bottom: 1px solid var(--borde); }
+    .menu.abierto { display: flex; }
+    .fila-2 { grid-template-columns: 1fr; gap: 0; }
+    .hero { padding: 3rem 1.5rem; }
+}
+
+/* Logo */
+.logo-img { display: block; height: 48px; width: auto; border-radius: 10px; }
+.lateral .logo-img { height: 72px; }

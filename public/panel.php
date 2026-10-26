@@ -1,30 +1,37 @@
 <?php
 declare(strict_types=1);
+require_once __DIR__ . '/../config/Conexion.php';
 require_once __DIR__ . '/../includes/auth.php';
 require_once __DIR__ . '/../includes/csrf.php';
+require_once __DIR__ . '/../includes/turnos.php';
 
 $usuario = requerir_login();
-$cargos = [1 => 'Administrador', 2 => 'Canchero', 3 => 'Atención al cliente', 4 => 'Mantenimiento', 5 => 'Cliente'];
-?>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mi panel | CanchaYa</title>
-    <link rel="stylesheet" href="<?= ASSETS_URL ?>/css/base.css">
-</head>
-<body>
-<main class="contenedor">
-    <div class="tarjeta">
-        <h1>Hola, <?= e($usuario['nombre']) ?></h1>
-        <p>Iniciaste sesión como <?= e($cargos[$usuario['cargo']] ?? 'Usuario') ?>.</p>
-        <p>Acá va a estar tu panel. Las reservas llegan en la fase 2.</p>
-        <form method="POST" action="logout.php">
-            <?= csrf_campo() ?>
-            <button class="btn btn-secundario" type="submit">Cerrar sesión</button>
-        </form>
-    </div>
-</main>
-</body>
-</html>
+
+// Cada cargo entra a su vista
+if ($usuario['cargo'] === CARGO_ADMIN) {
+    redirigir_url(ADMIN_URL . '/dashboard.php');
+}
+if (in_array($usuario['cargo'], [CARGO_CANCHERO, CARGO_ATENCION], true)) {
+    redirigir_url(ADMIN_URL . '/turnos.php');
+}
+
+$pdo = (new Conexion())->getConexion();
+$esCliente = $usuario['cargo'] === CARGO_CLIENTE;
+$proximo = null;
+$activos = 0;
+
+if ($esCliente) {
+    $st = $pdo->prepare(
+        'SELECT t.ID_turno, t.fecha, t.estado, t.vence_en, t.ID_cancha
+         FROM turno t WHERE t.ID_persona = :p AND t.fecha > ' . $pdo->quote(ahora()) . ' AND ' . sql_activo($pdo) . '
+         ORDER BY t.fecha LIMIT 1'
+    );
+    $st->execute([':p' => $usuario['id']]);
+    $proximo = $st->fetch() ?: null;
+    $activos = turnos_activos_usuario($pdo, $usuario['id']);
+}
+
+$aviso = tomar_aviso();
+$titulo = 'Mi panel';
+$activo = 'panel';
+require __DIR__ . '/../views/panel.view.php';

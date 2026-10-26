@@ -65,3 +65,5 @@
     .auth-marca .logo { left: 1.5rem; top: 1.25rem; }
     .fila { grid-template-columns: 1fr; gap: 0; }
 }
+
+.auth-marca .logo-img { height: 84px; width: auto; border-radius: 12px; display: block; }
